@@ -1,0 +1,227 @@
+@import "compass";
+@import "compass/reset/";
+
+$font-color: #666;
+$error-font-color: #f00;
+$bg-color: #0CF;
+$main-font-size: 14px;
+$title-font-size: 28px;
+$main-width: 100%;
+html{
+  height: 100%;
+  font-family: Meiryo , sans-serif;
+}
+
+body{
+  color: $font-color;
+  font-size: $main-font-size;
+  height: 100%;
+}
+
+a{
+  text-decoration: none;
+  color: $font-color;
+}
+
+a:hover{
+  opacity: 0.6;
+}
+
+header{
+  @include clearfix;
+  img{
+    float: left;
+    margin-right: 10px;
+  }
+
+  li > a{
+    float: left;
+    width: 150px;
+    height: 100px;
+    font-size: 20px;
+    line-height: 100px;
+    text-align: center;
+    border-right: dashed 1px #ccc;
+  }
+
+  padding: 1px 10%;
+  border-top: dashed 2px #ccc;
+  border-bottom: dashed 2px #ccc;
+}
+
+.container{
+  width: $main-width;
+  height: 100%;
+  margin:   0px auto;
+}
+
+section{
+  padding: 20px 0px;
+  min-height: 70%;
+}
+
+h1{
+  font-size: $title-font-size;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+footer{
+  margin-top: 20px;
+  text-align: center;
+  border-top: dashed 2px #ccc;
+  border-bottom: dashed 2px #ccc;
+  padding: 10px;
+  div{
+    padding-bottom: 10px;
+  }
+}
+
+button{
+  cursor: pointer;
+  display: block;
+}
+
+button:hover{
+  opacity: 0.8;
+}
+
+.normal-button{
+  display: block;
+  text-align: center;
+  border: none;
+  background-color: $bg-color;
+  color: #fff;
+  width: 100px;
+  height: 30px;
+  line-height: 30px;
+  border-radius: 5px;
+}
+
+.logout{
+  float: right;
+  margin-right: 1px;
+}
+
+.center{
+  text-align: center;
+}
+
+
+.big-button{
+  display: block;
+  width: 300px;
+  margin: 20px auto;
+  font-size: 20px;
+  height: 60px;
+  line-height: 60px;
+  background-color: $bg-color;
+  color: #fff;
+  border: none;
+  text-align: center;
+  border-radius: 10px;
+}
+
+h3{
+  text-align: center;
+  margin: 25px auto 10px auto;
+  border-bottom: 1px solid $bg-color;
+  padding-bottom: 5px;
+}
+
+.policy{
+  width: 800px;
+  margin: 20px auto;
+
+  .over{
+    margin-top: 30px;
+    text-align: right;
+  }
+}
+
+.company{
+  width: 500px;
+  margin: 0 auto;
+
+  tr{
+    height: 30px;
+  }
+
+  td,th{
+    padding: 20px;
+    border: solid 1px #ccc;
+  }
+
+  th{
+    background-color: $bg-color;
+    color: #fff;
+  }
+}
+
+.topics{
+  width: 800px;
+  margin: 0 auto 40px auto;
+}
+
+.pagination{
+  @include clearfix;
+  margin: 20px auto 0 auto;
+  text-align: center;
+  display: table;
+  li{
+    width: 20px;
+    display: block;
+    float: left;
+  }
+}
+
+label{
+  display: block;
+  float: left;
+  width: 150px;
+  height: 30px;
+  line-height: 20px;
+  text-align: right;
+  padding-right: 10px;
+}
+
+input{
+  color: $font-color;
+  width: 300px;
+  height: 20px;
+}
+
+select{
+  color: $font-color;
+}
+
+textarea{
+  color: $font-color;
+  height: 300px;
+  width: 500px;
+}
+
+.normal-form{
+  width: 800px;
+  margin: 20px auto;
+  fieldset{
+    margin: 10px;
+  }
+}
+
+.center{
+  margin: 0 auto;
+}
+
+.error{
+  text-align: center;
+  color: $error-font-color;
+  padding: 10px;
+}
