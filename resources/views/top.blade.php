@@ -6,7 +6,7 @@
 @if (isset($topic))
 <h2>最新のお知らせ</h2>
 <div class="topics">
-	<h3>{!!$topic->title!!}</h3>
+	<h3>{!!$topic->title!!} ({{$topic->created_at}})</h3>
 	<p class="center">{!!$topic->body!!}</p>
 </div>
 @endif
