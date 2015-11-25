@@ -38,3 +38,5 @@ Route::get('/policy', function () {
 	return view('policy');
 });
 
+Route::post('/api/inquiry/create', 'APIInquiryController@create');
+

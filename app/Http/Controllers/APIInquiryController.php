@@ -2,32 +2,30 @@
 
 namespace App\Http\Controllers;
 
-use App\Inquiry;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Response;
 
-class InquiryController extends Controller
+class APIInquiryController extends Controller
 {
-    public function index()
-    {
-		return view('inquiries.index');
-    }
-	public function postIndex(){
+	public function create()
+	{
 		$input = \Input::all();
 
-		$validation = Inquiry::validation($input);
+		$validation = \App\Inquiry::validation($input);
 
 		if($validation->fails())
 		{
-			return redirect()->back()->withErrors($validation->errors())->withInput();
+			$view = \View::make('errors.400');
+			return \Response::make($view->render(), '400');
 		}
 
 		$date = date("Y/m/d H:i:s");
 
 		\DB::select(\DB::raw("INSERT INTO `inquiries` (`is_done`, `name`, `email`, `title`, `body`, `deleted_at`, `created_at`, `updated_at`) VALUES (0, '{$input["name"]}', '{$input["email"]}', '{$input["title"]}', '{$input["body"]}', NULL, '{$date}', '{$date}');"));
 
-		return view('inquiries.sent');
+		return "";
 	}
 }
