@@ -27,6 +27,22 @@ class DatabaseSeeder extends Seeder
 			]
 		]);
 
+		DB::table('users')->insert([
+			[
+				'name'		=>'admin',
+				'email'		=>'admin@example.com',
+				'password'	=>'1234',
+				'is_admin'	=> 1,
+				'kana'		=>'アドミン',
+				'address'	=>'-',
+				'tel'		=>'-',
+				'deleted_at' => null,
+				'created_at' => date("Y-m-d H:i:s", time()),
+				'updated_at' => date("Y-m-d H:i:s", time()),
+			]
+		]);
+
+
 
 		Model::reguard();
     }
