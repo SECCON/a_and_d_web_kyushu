@@ -102,3 +102,9 @@ Route::controller('admin/topics', 'AdminTopicsController');
 Route::get("/admin/inquiries", 'AdminInquiriesController@index');
 Route::get("/admin/inquiries/update/{id}", 'AdminInquiriesController@update');
 Route::controller('admin/inquiries', 'AdminInquiriesController');
+
+Route::get("/admin/users", 'AdminUsersController@index');
+Route::get("/admin/users/create", 'AdminUsersController@create');
+Route::get("/admin/users/update/{id}", 'AdminUsersController@update');
+Route::get("/admin/users/delete/{id}", 'AdminUsersController@delete');
+Route::controller('admin/users', 'AdminUsersController');
