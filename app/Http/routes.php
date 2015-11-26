@@ -41,6 +41,12 @@ Route::controller('signin', 'SigninController');
 Route::get("/inquiry", 'InquiryController@index');
 Route::controller('inquiry', 'InquiryController');
 
+Route::get("/cards", 'CardsController@index');
+Route::get("/cards/create", 'CardsController@create');
+Route::get("/cards/update/{id}", 'CardsController@update');
+Route::get("/cards/delete/{id}", 'CardsController@delete');
+Route::controller('cards', 'CardsController');
+
 Route::get("/setting", 'SettingController@index');
 Route::controller('setting', 'SettingController');
 

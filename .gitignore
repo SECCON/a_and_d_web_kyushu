@@ -19,3 +19,5 @@ Thumbs.db
 desktop.ini
 
 /.sass-cache
+/public/files/*
+!/public/files/index.html
