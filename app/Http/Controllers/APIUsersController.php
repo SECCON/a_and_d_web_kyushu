@@ -44,6 +44,27 @@ class APIUsersController extends Controller
 		return "";
 	}
 
+	public function update()
+	{
+		$input = \Input::all();
+
+		$user = \App\User::getUser($input["token"]);
+
+		if($user == null)
+		{
+			$view = \View::make('errors.400');
+			return \Response::make($view->render(), '400');
+		}
+		$user->name = $input["name"];
+		$user->kana = $input["kana"];
+		$user->tel = $input["tel"];
+		$user->zip_code = $input["zip_code"];
+		$user->address = $input["address"];
+		$user->save();
+
+		return "";
+	}
+
 	public function info()
 	{
 		$input = \Input::all();
