@@ -88,3 +88,7 @@ Route::post('/api/users/email', 'APIUsersController@email');
 Route::post('/api/users/update', 'APIUsersController@update');
 Route::post('/api/users/info', 'APIUsersController@info');
 Route::post('/api/cards', 'APICardsController@index');
+
+Route::get("/admin", 'AdminController@index');
+Route::get("/admin/signin", 'AdminSigninController@index');
+Route::controller('/admin/signin', 'AdminSigninController');

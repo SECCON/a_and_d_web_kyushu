@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Mockery\Exception;
 
 class User extends Model
 {
@@ -45,6 +47,33 @@ class User extends Model
 
 	public static function getUserWithCheck($token)
 	{
-		return User::where("token", $token)->firstOrFail();
+		$user = null;
+		try
+		{
+			$user = User::where("token", $token)->firstOrFail();
+		}
+		catch (ModelNotFoundException $e)
+		{
+			$root = \Request::root();
+			header("Location: {$root}/admin/signin");
+			exit;
+		}
+		return $user;
+	}
+
+	public static function getAdminWithCheck($token)
+	{
+		$user = null;
+		try
+		{
+			$user = User::where("token", $token)->where("is_admin", 1)->firstOrFail();
+		}
+		catch (ModelNotFoundException $e)
+		{
+			$root = \Request::root();
+			header("Location: {$root}/admin/signin");
+			exit;
+		}
+		return $user;
 	}
 }
