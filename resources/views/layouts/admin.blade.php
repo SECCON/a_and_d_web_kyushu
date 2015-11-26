@@ -14,9 +14,9 @@
 
 		@section('menu')
 		<ul>
-			<li><a href="/">トップ</a></li>
+			<li><a href="/admin">トップ</a></li>
 			@if (isset($user) && $user != null)
-			<li><a href="/topics">お知らせ</a></li>
+			<li><a href="/admin/topics">お知らせ</a></li>
 			<li><a href="/cards">名刺</a></li>
 			<li class="logout"><a href="/logout">ログアウト</a></li>
 			@else

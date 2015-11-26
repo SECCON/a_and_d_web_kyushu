@@ -92,3 +92,9 @@ Route::post('/api/cards', 'APICardsController@index');
 Route::get("/admin", 'AdminController@index');
 Route::get("/admin/signin", 'AdminSigninController@index');
 Route::controller('/admin/signin', 'AdminSigninController');
+
+Route::get("/admin/topics", 'AdminTopicsController@index');
+Route::get("/admin/topics/create", 'AdminTopicsController@create');
+Route::get("/admin/topics/update/{id}", 'AdminTopicsController@update');
+Route::get("/admin/topics/delete/{id}", 'AdminTopicsController@delete');
+Route::controller('admin/topics', 'AdminTopicsController');
