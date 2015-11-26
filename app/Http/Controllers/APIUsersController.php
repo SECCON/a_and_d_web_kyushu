@@ -26,4 +26,21 @@ class APIUsersController extends Controller
 
 		return "";
 	}
+
+	public function info()
+	{
+		$input = \Input::all();
+
+		$user = \App\User::getUser($input["token"]);
+
+		if($user == null)
+		{
+			$view = \View::make('errors.400');
+			return \Response::make($view->render(), '400');
+		}
+
+		$response["user"] = $user;
+
+		return Response::json($response);
+	}
 }
