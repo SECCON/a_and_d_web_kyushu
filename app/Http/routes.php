@@ -87,3 +87,4 @@ Route::post('/api/users/password', 'APIUsersController@password');
 Route::post('/api/users/email', 'APIUsersController@email');
 Route::post('/api/users/update', 'APIUsersController@update');
 Route::post('/api/users/info', 'APIUsersController@info');
+Route::post('/api/cards', 'APICardsController@index');
