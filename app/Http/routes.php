@@ -98,3 +98,7 @@ Route::get("/admin/topics/create", 'AdminTopicsController@create');
 Route::get("/admin/topics/update/{id}", 'AdminTopicsController@update');
 Route::get("/admin/topics/delete/{id}", 'AdminTopicsController@delete');
 Route::controller('admin/topics', 'AdminTopicsController');
+
+Route::get("/admin/inquiries", 'AdminInquiriesController@index');
+Route::get("/admin/inquiries/update/{id}", 'AdminInquiriesController@update');
+Route::controller('admin/inquiries', 'AdminInquiriesController');

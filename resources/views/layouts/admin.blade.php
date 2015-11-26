@@ -17,7 +17,9 @@
 			<li><a href="/admin">トップ</a></li>
 			@if (isset($user) && $user != null)
 			<li><a href="/admin/topics">お知らせ</a></li>
-			<li><a href="/cards">名刺</a></li>
+			<li><a href="/admin/users">ユーザ</a></li>
+			<li><a href="/admin/cards">名刺</a></li>
+			<li><a href="/admin/inquiries">お問い合わせ</a></li>
 			<li class="logout"><a href="/logout">ログアウト</a></li>
 			@else
 			<li class="logout">
@@ -32,7 +34,6 @@
 		@yield('content')
 	</section>
 	<footer>
-		<div><a href="/policy">プライバシーポリシー</a> | <a href="/term">利用規約</a> | <a href="/company">運営会社</a> | <a href="/inquiry">お問い合わせ</a></div>
 		<p>Copyright 2015 エーアンドディー株式会社 All rights reserved.</p>
 	</footer>
 </div>
