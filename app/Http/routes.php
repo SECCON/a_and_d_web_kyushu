@@ -32,6 +32,9 @@ Route::get('/log', function ()
 	return view('log', $data);
 });
 
+Route::get("/signup", 'SignupController@index');
+Route::controller('signup', 'SignupController');
+
 Route::get("/signin", 'SigninController@index');
 Route::controller('signin', 'SigninController');
 
