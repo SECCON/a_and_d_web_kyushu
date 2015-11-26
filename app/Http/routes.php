@@ -14,15 +14,22 @@
 Route::get('/', function ()
 {
 	$data["user"] = \App\User::getUser(Cookie::get('adweb3'));
-	$data["topic"] = \App\Topic::where('is_public', '=', 1)->orderBy('created_at')->first();
+	$data["topic"] = \App\Topic::where('is_public', '=', 1)->orderBy('created_at', 'desc')->first();
     return view('top', $data);
 });
 
 Route::get('/topics', function ()
 {
 	$data["user"] = \App\User::getUser(Cookie::get('adweb3'));
-	$data["topics"] = \App\Topic::where('is_public', '=', 1)->orderBy('created_at')->paginate(10);
+	$data["topics"] = \App\Topic::where('is_public', '=', 1)->orderBy('created_at', 'desc')->paginate(10);
 	return view('topics', $data);
+});
+
+Route::get('/log', function ()
+{
+	$data["user"] = \App\User::getUserwithCheck(Cookie::get('adweb3'));
+	$data["logs"] = \App\Loginlog::where('user_id', $data["user"]->id)->orderBy('created_at', 'desc')->paginate(10);
+	return view('log', $data);
 });
 
 Route::get("/signin", 'SigninController@index');

@@ -229,3 +229,26 @@ textarea{
 .header_user > a{
   width: 300px;
 }
+
+.normal-table{
+  margin: 20px auto;
+  th{
+    border: solid #ccc 1px;
+    width: 200px;
+    font-size: 16px;
+    padding: 5px;
+    background-color: $bg-color;
+    color: #fff;
+    text-align: center;
+  }
+  td{
+    border: solid #ccc 1px;
+    padding: 10px;
+  }
+  .small{
+    width: 50px;
+  }
+  .middle{
+    width: 50px;
+  }
+}

@@ -42,4 +42,9 @@ class User extends Model
 	{
 		return User::where("token", $token)->first();
 	}
+
+	public static function getUserWithCheck($token)
+	{
+		return User::where("token", $token)->firstOrFail();
+	}
 }
