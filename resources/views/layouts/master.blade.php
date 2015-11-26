@@ -16,10 +16,10 @@
 		<ul>
 			<li><a href="/">トップ</a></li>
 			<li><a href="/topics">お知らせ</a></li>
+			@if (isset($user) && $user != null)
 			<li><a href="/cards">名刺</a></li>
 			<li><a href="/log">ログイン履歴</a></li>
-			@if (isset($user) && $user != null)
-			<li class="logout"><a href="/?logout=1">ログアウト</a></li>
+			<li class="logout"><a href="/logout">ログアウト</a></li>
 			<li class="header_user"><a href="/setting">{!!$user->name!!}</a></li>
 			@else
 			<li class="logout">

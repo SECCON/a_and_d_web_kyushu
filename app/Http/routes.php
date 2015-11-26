@@ -56,6 +56,17 @@ Route::get('/policy', function ()
 	return view('policy', $data);
 });
 
+Route::get('/logout', function ()
+{
+	$data["user"] = \App\User::getUser(Cookie::get('adweb3'));
+	if($data["user"] != null)
+	{
+		$data["user"]->token = null;
+		$data["user"]->save();
+	}
+	return redirect("/");
+});
+
 Route::post('/api/inquiry/create', 'APIInquiryController@create');
 Route::get('/api/topics', 'APITopicsController@index');
 Route::post('/api/signup', 'APISignupController@index');
