@@ -25,6 +25,8 @@ class APISigninController extends Controller
 		$user->token = md5($input["email"] . time());
 		$user->save();
 
+		\App\Loginlog::setLoginLog($user->id);
+
 		return "";
 	}
 }
