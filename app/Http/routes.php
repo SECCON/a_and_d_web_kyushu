@@ -108,3 +108,7 @@ Route::get("/admin/users/create", 'AdminUsersController@create');
 Route::get("/admin/users/update/{id}", 'AdminUsersController@update');
 Route::get("/admin/users/delete/{id}", 'AdminUsersController@delete');
 Route::controller('admin/users', 'AdminUsersController');
+
+Route::get("/admin/cards", 'AdminCardsController@index');
+Route::get("/admin/cards/delete/{id}", 'AdminCardsController@delete');
+Route::controller('admin/cards', 'AdminCardsController');

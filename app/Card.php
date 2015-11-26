@@ -13,4 +13,10 @@ class Card extends Model
 	protected $dates = ['deleted_at'];
 
 	protected $fillable = ['tag', 'user_id', 'path'];
+
+	public function user()
+	{
+ 		return $this->belongsTo('App\User', 'user_id');
+	}
+
 }

@@ -79,7 +79,6 @@ class AdminUsersController extends Controller
 		$user->email = $input["email"];
 
 		$user->save();
-		
 		return redirect("/admin/users");
 	}
 }
