@@ -40,3 +40,4 @@ Route::get('/policy', function () {
 
 Route::post('/api/inquiry/create', 'APIInquiryController@create');
 Route::get('/api/topics', 'APITopicsController@index');
+Route::post('/api/signup', 'APISignupController@index');
