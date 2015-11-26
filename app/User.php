@@ -37,4 +37,9 @@ class User extends Model
 
 		return \Validator::make($input,$rules,$messages);
 	}
+
+	public static function getUser($token)
+	{
+		return User::where("token", $token)->first();
+	}
 }

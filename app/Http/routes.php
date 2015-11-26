@@ -42,3 +42,4 @@ Route::post('/api/inquiry/create', 'APIInquiryController@create');
 Route::get('/api/topics', 'APITopicsController@index');
 Route::post('/api/signup', 'APISignupController@index');
 Route::post('/api/signin', 'APISigninController@index');
+Route::post('/api/users/password', 'APIUsersController@password');
