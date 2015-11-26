@@ -13,7 +13,7 @@
 	</fieldset>
 	<fieldset>
 		<label for="password">パスワード:</label>
-		<input type="password required="" name="password" id="password">
+		<input type="password" required="" name="password" id="password">
 	</fieldset>
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
 	<button type="submit" class="normal-button center">ログイン</button>

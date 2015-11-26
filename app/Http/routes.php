@@ -38,6 +38,9 @@ Route::controller('signin', 'SigninController');
 Route::get("/inquiry", 'InquiryController@index');
 Route::controller('inquiry', 'InquiryController');
 
+Route::get("/setting", 'SettingController@index');
+Route::controller('setting', 'SettingController');
+
 Route::get('/company', function ()
 {
 	$data["user"] = \App\User::getUser(Cookie::get('adweb3'));
