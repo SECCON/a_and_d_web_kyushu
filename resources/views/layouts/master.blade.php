@@ -20,7 +20,7 @@
 			<li><a href="/log">ログイン履歴</a></li>
 			@if (isset($user) && $user != null)
 			<li class="logout"><a href="/?logout=1">ログアウト</a></li>
-			<li class="header_user"><a href="/setting">名前</a></li>
+			<li class="header_user"><a href="/setting">{!!$user->name!!}</a></li>
 			@else
 			<li class="logout">
 				<a href="/signin">ログイン</a>

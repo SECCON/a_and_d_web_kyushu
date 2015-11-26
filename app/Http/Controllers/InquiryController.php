@@ -12,7 +12,8 @@ class InquiryController extends Controller
 {
     public function index()
     {
-		return view('inquiries.index');
+		$data["user"] = \App\User::getUser(\Cookie::get('adweb3'));
+		return view('inquiries.index', $data);
     }
 	public function postIndex(){
 		$input = \Input::all();
@@ -28,6 +29,7 @@ class InquiryController extends Controller
 
 		\DB::select(\DB::raw("INSERT INTO `inquiries` (`is_done`, `name`, `email`, `title`, `body`, `deleted_at`, `created_at`, `updated_at`) VALUES (0, '{$input["name"]}', '{$input["email"]}', '{$input["title"]}', '{$input["body"]}', NULL, '{$date}', '{$date}');"));
 
-		return view('inquiries.sent');
+		$data["user"] = \App\User::getUser(\Cookie::get('adweb3'));
+		return view('inquiries.sent', $data);
 	}
 }
