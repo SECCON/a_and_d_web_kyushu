@@ -43,4 +43,5 @@ Route::get('/api/topics', 'APITopicsController@index');
 Route::post('/api/signup', 'APISignupController@index');
 Route::post('/api/signin', 'APISigninController@index');
 Route::post('/api/users/password', 'APIUsersController@password');
+Route::post('/api/users/email', 'APIUsersController@email');
 Route::post('/api/users/info', 'APIUsersController@info');
