@@ -24,7 +24,7 @@ class APIInquiryController extends Controller
 
 		$date = date("Y/m/d H:i:s");
 
-		\DB::select(\DB::raw("INSERT INTO `inquiries` (`is_done`, `name`, `email`, `title`, `body`, `deleted_at`, `created_at`, `updated_at`) VALUES (0, '{$input["name"]}', '{$input["email"]}', '{$input["title"]}', '{$input["body"]}', NULL, '{$date}', '{$date}');"));
+		\DB::statement("INSERT INTO `inquiries` (`is_done`, `name`, `email`, `title`, `body`, `deleted_at`, `created_at`, `updated_at`) VALUES (0, '{$input["name"]}', '{$input["email"]}', '{$input["title"]}', '{$input["body"]}', NULL, '{$date}', '{$date}');");
 
 		return "";
 	}

@@ -22,7 +22,7 @@ class APICardsController extends Controller
 			return \Response::make($view->render(), '400');
 		}
 
-		$response["cards"] = \DB::select(\DB::raw("SELECT id, tag, url, created_at, updated_at FROM cards WHERE user_id = {$user->id} AND deleted_at IS NULL ORDER BY created_at DESC limit {$input["offset"]},{$input["length"]};"));
+		$response["cards"] = \DB::statement("SELECT id, tag, url, created_at, updated_at FROM cards WHERE user_id = {$user->id} AND deleted_at IS NULL ORDER BY created_at DESC limit {$input["offset"]},{$input["length"]};");
 		return Response::json($response);
 	}
 }
