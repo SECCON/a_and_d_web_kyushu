@@ -36,6 +36,6 @@
 		<input type="text" name="tel" id="tel" value="{{Input::old('tel')}}">
 	</fieldset>
 	<input type="hidden" name="_token" value="{{ csrf_token()}}">
-	<button type="submit" class="normal-button center">変更</button>
+	<button type="submit" class="normal-button center">登録</button>
 </form>
 @stop
