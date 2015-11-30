@@ -2,7 +2,7 @@
 
 ## Required
 
-- PHP 5.4
+- PHP 5.5
 - MySQL
 - composer
 - compass
